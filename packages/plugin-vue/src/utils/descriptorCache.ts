@@ -52,6 +52,10 @@ export function invalidateDescriptor(filename: string, hmr = false): void {
   }
 }
 
+export function setPrevDescriptor(filename: string, descriptor: SFCDescriptor): void {
+  prevCache.set(filename, descriptor)
+}
+
 export function getDescriptor(
   filename: string,
   options: ResolvedOptions,
