@@ -56,6 +56,10 @@ export function setPrevDescriptor(filename: string, descriptor: SFCDescriptor): 
   prevCache.set(filename, descriptor)
 }
 
+export function clearPrevDescriptor(filename: string): void {
+  prevCache.delete(filename)
+}
+
 export function getDescriptor(
   filename: string,
   options: ResolvedOptions,
