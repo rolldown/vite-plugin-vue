@@ -1,5 +1,5 @@
 {
-  "name": "@vitejs/plugin-vue",
+  "name": "plugin-vue-rolldown-hmr-demo",
   "version": "5.0.5",
   "license": "MIT",
   "author": "Evan You",

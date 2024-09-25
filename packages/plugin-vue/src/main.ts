@@ -12,6 +12,7 @@ import {
   createDescriptor,
   getDescriptor,
   getPrevDescriptor,
+  setPrevDescriptor,
   setSrcDescriptor,
 } from './utils/descriptorCache'
 import {
@@ -152,6 +153,7 @@ export async function transformMain(
     if (prevDescriptor && isOnlyTemplateChanged(prevDescriptor, descriptor)) {
       output.push(`export const _rerender_only = true`)
     }
+    setPrevDescriptor(filename, descriptor)
     output.push(
       `import.meta.hot.accept(mod => {`,
       `  if (!mod) return`,

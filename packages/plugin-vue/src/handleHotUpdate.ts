@@ -8,6 +8,7 @@ import type * as t from '@babel/types'
 
 import {
   cache,
+  clearPrevDescriptor,
   createDescriptor,
   getDescriptor,
   invalidateDescriptor,
@@ -341,6 +342,7 @@ export function handleTypeDepChange(
 ): ModuleNode[] {
   const affected = new Set<ModuleNode>()
   for (const file of affectedComponents) {
+    clearPrevDescriptor(file)
     invalidateScript(file)
     const mods = moduleGraph.getModulesByFile(file)
     if (mods) {
