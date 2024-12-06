@@ -15,6 +15,12 @@ export default defineConfig({
   },
   test: {
     include: ['./playground/**/*.spec.[tj]s'],
+    exclude: [
+      // need to system format
+      './playground/vue-legacy/**/*.spec.[tj]s',
+      // need to umd format
+      './playground/vue-lib/**/*.spec.[tj]s',
+    ],
     setupFiles: ['./playground/vitestSetup.ts'],
     globalSetup: ['./playground/vitestGlobalSetup.ts'],
     testTimeout: timeout,

@@ -1,13 +1,13 @@
 import path from 'node:path'
 import fs from 'node:fs'
 import type { SFCBlock, SFCDescriptor } from 'vue/compiler-sfc'
-import type { PluginContext, TransformPluginContext } from 'rollup'
+import type { PluginContext, TransformPluginContext } from 'rolldown'
 import type { RawSourceMap } from 'source-map-js'
 import type { EncodedSourceMap as TraceEncodedSourceMap } from '@jridgewell/trace-mapping'
 import { TraceMap, eachMapping } from '@jridgewell/trace-mapping'
 import type { EncodedSourceMap as GenEncodedSourceMap } from '@jridgewell/gen-mapping'
 import { addMapping, fromMap, toEncodedMap } from '@jridgewell/gen-mapping'
-import { normalizePath, transformWithEsbuild } from 'vite'
+import { normalizePath, transformWithEsbuild } from 'rolldown-vite'
 import {
   createDescriptor,
   getDescriptor,
